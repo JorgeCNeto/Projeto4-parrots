@@ -1,0 +1,82 @@
+body{
+    background-color: #EEF9BF;
+    width: 1110px;
+    height: 629px;
+}
+
+.escondido{
+    display: none;
+}
+.conteudo{
+
+}
+h1{
+    width: 540px;
+    height: 63px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+    color: #75B79E;
+    margin-left: 285px;
+    margin-top: 40px;
+    margin-bottom: 47px;
+    
+}
+
+.deck{
+    margin-left: 122px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    box-sizing: border-box;
+    width: 117px;
+    height: 146px;
+    background: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 17px;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+@media (max-width: 490px) {
+    body{
+        width: 100%;
+    }
+    .conteudo{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        width: 100%;
+        height: 63px;
+        margin: 40px 0 47px 0;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 0 12px;
+    }
+    .deck{
+        flex-direction: column;
+        margin: 0 0 34px 0;
+        
+    }
+}
