@@ -4,7 +4,7 @@ body{
     height: 629px;
 }
 
-.escondido{
+.escondido, .exibicao{
     display: none;
 }
 .conteudo{
@@ -79,4 +79,5 @@ img{
         margin: 0 0 34px 0;
         
     }
+    
 }
