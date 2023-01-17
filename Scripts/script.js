@@ -1,10 +1,7 @@
 let cards = prompt("Escolhe um número de cartas entre 4 e 14");
 
 
-function start();
-
-function start (){
-    prompt("Escolhe um número de cartas entre 4 e 14");
+prompt("Escolhe um número de cartas entre 4 e 14");
     if (cards % 2 !== 0) {
         
         while (cards % 2 !==0) {
@@ -17,21 +14,56 @@ function start (){
             cards = prompt("Escolhe um número de cartas entre 4 e 14");
         }
     } 
+
+function start (){
+    
 }
 
 
-let cardsArray = [];
-
-function transformacaoEmArray(){
-    for (let i = 0; i < cardsArray.length; index++) {
-        cardsArray.push = document.querySelector('.card');
+let cardsArray = [
+    {img: "Pictures/bobrossparrot.gif", tag: "gif1"},
+    {img: "Pictures/bobrossparrot.gif", tag: "gif1"},
+    {img: "Pictures/explodyparrot.gif", tag: "gif2"},
+    {img: "Pictures/explodyparrot.gif", tag: "gif2"},  
+    {img: "Pictures/fiestaparrot.gif", tag: "gif3"},
+    {img: "Pictures/fiestaparrot.gif", tag: "gif3"},
+    {img: "Pictures/metalparrot.gif", tag: "gif4"},
+    {img: "Pictures/metalparrot.gif", tag: "gif4"},
+    {img: "Pictures/revertitparrot.gif", tag: "gif5"},
+    {img: "Pictures/revertitparrot.gif", tag: "gif5"},
+    {img: "Pictures/tripletsparrot.gif", tag: "gif6"},
+    {img: "Pictures/tripletsparrot.giff", tag: "gif6"},
+    {img: "Pictures/unicornparrot.gif", tag: "gif7"},
+    {img: "Pictures/unicornparrot.gif", tag: "gif7"}
+];
     
+let numberOfCards = [];
+
+cardsArray.sort(shuffle);
+for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < cards/2; i++) {
+        numberOfCards.push(cardsArray[i])
     }
 }
-//if para achar o numero
 
-//usar o numero digitado para botar as cartas com um while
+function shuffle() { 
+	return Math.random() - 0.5; 
+}
 
+for (let i = 0; i < cards; i++) {
+    const painel = document.querySelector(".jogo");        
+    painel.innerHTML += `
+                        <div onclick="flipCard(this)" class="card exibicao">
+                            <div class="front escondido">
+                                <img src="${i}">
+                            </div>
+                            <div class="back">
+                                <img src="Pictures/back.png">
+                            </div>
+                        </div>
+                        `
+ 
+}  
 
 function flipCard(CardSelected) {
     
