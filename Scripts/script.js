@@ -1,7 +1,4 @@
 let cards = prompt("Escolhe um número de cartas entre 4 e 14");
-
-
-prompt("Escolhe um número de cartas entre 4 e 14");
     if (cards % 2 !== 0) {
         
         while (cards % 2 !==0) {
@@ -15,9 +12,7 @@ prompt("Escolhe um número de cartas entre 4 e 14");
         }
     } 
 
-function start (){
-    
-}
+
 
 
 let cardsArray = [
@@ -51,7 +46,7 @@ function shuffle() {
 }
 
 for (let i = 0; i < cards; i++) {
-    const painel = document.querySelector(".jogo");        
+    const painel = document.querySelector(".deck");        
     painel.innerHTML += `
                         <div onclick="flipCard(this)" class="card exibicao">
                             <div class="front escondido">
