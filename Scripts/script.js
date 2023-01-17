@@ -16,20 +16,20 @@ let cards = prompt("Escolhe um número de cartas entre 4 e 14");
 
 
 let cardsArray = [
-    {img: "Pictures/bobrossparrot.gif", tag: "gif1"},
-    {img: "Pictures/bobrossparrot.gif", tag: "gif1"},
-    {img: "Pictures/explodyparrot.gif", tag: "gif2"},
-    {img: "Pictures/explodyparrot.gif", tag: "gif2"},  
-    {img: "Pictures/fiestaparrot.gif", tag: "gif3"},
-    {img: "Pictures/fiestaparrot.gif", tag: "gif3"},
-    {img: "Pictures/metalparrot.gif", tag: "gif4"},
-    {img: "Pictures/metalparrot.gif", tag: "gif4"},
-    {img: "Pictures/revertitparrot.gif", tag: "gif5"},
-    {img: "Pictures/revertitparrot.gif", tag: "gif5"},
-    {img: "Pictures/tripletsparrot.gif", tag: "gif6"},
-    {img: "Pictures/tripletsparrot.giff", tag: "gif6"},
-    {img: "Pictures/unicornparrot.gif", tag: "gif7"},
-    {img: "Pictures/unicornparrot.gif", tag: "gif7"}
+    "Pictures/bobrossparrot.gif",
+    "Pictures/bobrossparrot.gif",
+    "Pictures/explodyparrot.gif",
+    "Pictures/explodyparrot.gif",  
+    "Pictures/fiestaparrot.gif",
+    "Pictures/fiestaparrot.gif",
+    "Pictures/metalparrot.gif",
+    "Pictures/metalparrot.gif",,
+    "Pictures/revertitparrot.gif",
+    "Pictures/revertitparrot.gif",
+    "Pictures/tripletsparrot.gif",
+    "Pictures/tripletsparrot.giff",
+    "Pictures/unicornparrot.gif",
+    "Pictures/unicornparrot.gif",
 ];
     
 let numberOfCards = [];
