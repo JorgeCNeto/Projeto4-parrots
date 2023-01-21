@@ -1,98 +1,3 @@
-/*let cards = prompt("Escolhe um número de cartas entre 4 e 14");
-    if (cards % 2 !== 0) {
-        
-        while (cards % 2 !==0) {
-            cards = prompt("Escolhe um número de cartas entre 4 e 14");
-        }
-        
-    } else if(cards < 4 || cards > 14){
-        
-        while (cards < 4 || cards > 14) {
-            cards = prompt("Escolhe um número de cartas entre 4 e 14");
-        }
-    } 
-
-
-
-
-let cardsArray = [
-    "Pictures/bobrossparrot.gif",
-    "Pictures/bobrossparrot.gif",
-    "Pictures/explodyparrot.gif",
-    "Pictures/explodyparrot.gif",  
-    "Pictures/fiestaparrot.gif",
-    "Pictures/fiestaparrot.gif",
-    "Pictures/metalparrot.gif",
-    "Pictures/metalparrot.gif",,
-    "Pictures/revertitparrot.gif",
-    "Pictures/revertitparrot.gif",
-    "Pictures/tripletsparrot.gif",
-    "Pictures/tripletsparrot.giff",
-    "Pictures/unicornparrot.gif",
-    "Pictures/unicornparrot.gif",
-];
-    
-let numberOfCards = [];
-
-cardsArray.sort(shuffle);
-for (let i = 0; i < 2; i++) {
-    for (let i = 0; i < cards/2; i++) {
-        numberOfCards.push(cardsArray[i])
-    }
-}
-
-function shuffle() { 
-	return Math.random() - 0.5; 
-}
-
-for (let i = 0; i < cards; i++) {
-    const painel = document.querySelector(".deck");        
-    painel.innerHTML += `
-                        <div onclick="flipCard(this)" class="card exibicao">
-                            <div class="front escondido">
-                                <img src="${i}">
-                            </div>
-                            <div class="back">
-                                <img src="Pictures/back.png">
-                            </div>
-                        </div>
-                        `
- 
-}  
-
-function flipCard(CardSelected) {
-    
-    
-    const turnback = document.querySelector('.card .back');
-    console.log(turnback);
-    turnback.classList.add('escondido');
-
-    const turnfront = document.querySelector('.card .front');
-    turnfront.classList.remove('escondido');
-    
-
-    
-}
-
-function verification(verify){
-    const boxSelected = document.querySelector(`${verify} .selecionado`);
-
-    if (condition) {
-        
-    }
-}
-
-    function desmarcacaoAnterior(seletor){
-        
-        const caixaSelecionada = document.querySelector(`${seletor} .selecionado`);
-
-    
-        if (caixaSelecionada !== null){
-            
-            caixaSelecionada.classList.remove('selecionado');
-        }
-    } */
-
 let cardsQuantity = 0;
 
 const cards = [
@@ -129,10 +34,10 @@ function endGame(){
 
     alert(`Você ganhou em ${plays} jogadas! A duração do jogo foi de ${time} segundos!`);
 
-    //const fim = prompt('Gostaria de jogar novamente');
-    const fim = confirm('Gostaria de jogar novamente');
+   
+    const end = confirm('Gostaria de jogar novamente');
 
-    if ( fim === true){
+    if ( end === true){
         window.location.reload(true);
     }
 }
@@ -141,10 +46,10 @@ function turnCard(){
     firstCard.classList.remove('turn');
     secondCard.classList.remove('turn');
     
-    resetarCartas();
+    cardsReset();
 }
 
-function resetarCartas(){
+function cardsReset(){
     firstCard = undefined;
     secondCard = undefined;
 }
@@ -169,10 +74,13 @@ function turnCard(card){
         if ( secondCard === undefined){
             secondCard = card;
             
+            console.log(firstCard)
+            console.log(secondCard)
+
             if ( firstCard.innerHTML === secondCard.innerHTML){
                 
                 geted+=2;                             
-                resetarCartas();
+                cardsReset();
                 endGameVerification();
             }else{
                 
@@ -180,10 +88,7 @@ function turnCard(card){
             }
         }
     }
-    console.log(firstCard);
     
-    console.log(secondCard);
-
 }
 
 function renderizeDeck(){
@@ -195,10 +100,10 @@ function renderizeDeck(){
         let template = `
             <li class="card" onclick="turnCard(this)">
                 <div class='front-face face'>
-                    <img src='Picture/back.png'>
+                    <img src="Pictures/back.png">
                 </div>
                 <div class='back-face face'>
-                    <img src='Picture/${deck[i]}.gif'>
+                    <img src="Pictures/${deck[i]}.gif">
                 </div>
             </li>          
         `;
@@ -211,7 +116,7 @@ function renderizeDeck(){
 
 
 function comparator() { 
-	return Math.random() - 0.5;
+	return Math.random() -0.5;
 }
 
 function deckGenerator(){
@@ -237,19 +142,19 @@ function invalidGame(){
 }
 
 function timer(){
-    const relogio = document.querySelector('.relogio');
+    const clock = document.querySelector('.clock');
     
     time++;
     
-    relogio.innerHTML = time;
+    clock.innerHTML = time;
     
 }
 
 function initializing (){
-    cardsQuantity = Number(prompt('Com quantas cartas você quer jogar?'));
+    cardsQuantity = Number(prompt('Escolhe um número de cartas entre 4 e 14:'));
 
     while( invalidGame() ){
-        cardsQuantity = Number(prompt('Com quantas cartas você quer jogar?'));
+        cardsQuantity = Number(prompt('Escolhe um número de cartas entre 4 e 14:'));
     }
 
     idInterval = setInterval(timer, 1000);
